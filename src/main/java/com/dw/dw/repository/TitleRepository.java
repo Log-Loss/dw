@@ -11,4 +11,10 @@ public interface TitleRepository extends JpaRepository<Title, Long> {
     Title findByTitle(String title);
 
     List<Title> findByTitleLike(String title);
+
+    List<Title> findByTitleContaining(String title);
+
+    List<Title> findByTitleContains(String title);
+
+    List<Title> findByTitleStartingWith(String title);
 }

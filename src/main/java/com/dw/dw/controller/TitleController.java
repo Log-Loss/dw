@@ -1,6 +1,5 @@
 package com.dw.dw.controller;
 
-import com.dw.dw.repository.MovieRepository;
 import com.dw.dw.repository.TitleRepository;
 import com.dw.dw.util.Response;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,6 +16,30 @@ public class TitleController {
     @RequestMapping(value = "/title/{title}", method = RequestMethod.GET)
     public Object index(@PathVariable String title) {
         Object result = titleRepository.findByTitle(title);
+        return new Response(200, "OK", result, false);
+    }
+
+    @RequestMapping(value = "/title/containing/{title}", method = RequestMethod.GET)
+    public Object containing(@PathVariable String title) {
+        Object result = titleRepository.findByTitleContaining(title);
+        return new Response(200, "OK", result, false);
+    }
+
+    @RequestMapping(value = "/title/like/{title}", method = RequestMethod.GET)
+    public Object like(@PathVariable String title) {
+        Object result = titleRepository.findByTitleLike(title);
+        return new Response(200, "OK", result, false);
+    }
+
+    @RequestMapping(value = "/title/starting/{title}", method = RequestMethod.GET)
+    public Object starting(@PathVariable String title) {
+        Object result = titleRepository.findByTitleStartingWith(title);
+        return new Response(200, "OK", result, false);
+    }
+
+    @RequestMapping(value = "/title/contains/{title}", method = RequestMethod.GET)
+    public Object contains(@PathVariable String title) {
+        Object result = titleRepository.findByTitleContains(title);
         return new Response(200, "OK", result, false);
     }
 }

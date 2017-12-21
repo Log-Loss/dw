@@ -124,4 +124,6 @@ public class Movie {
 
     @Column(length = 420)
     public String title;
+
+    public Float score;
 }
