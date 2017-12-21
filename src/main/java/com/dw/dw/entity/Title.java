@@ -1,6 +1,8 @@
 package com.dw.dw.entity;
 
-        import javax.persistence.*;
+import com.fasterxml.jackson.annotation.JsonRawValue;
+
+import javax.persistence.*;
 
 @Entity
 @Table(name = "titles")
@@ -10,6 +12,7 @@ public class Title {
     @Column(length = 420)
     public String title;
 
+    @JsonRawValue
     @Column(columnDefinition = "TEXT")
     public String productIds;
 }

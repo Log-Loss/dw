@@ -1,5 +1,7 @@
 package com.dw.dw.entity;
 
+import com.fasterxml.jackson.annotation.JsonRawValue;
+
 import javax.persistence.*;
 
 @Entity
@@ -10,9 +12,11 @@ public class Director {
     @Column(length = 228)
     public String director;
 
+    @JsonRawValue
     @Column(columnDefinition = "TEXT")
     public String productIds;
 
+    @JsonRawValue
     @Column(columnDefinition = "TEXT")
     public String actors;
 }

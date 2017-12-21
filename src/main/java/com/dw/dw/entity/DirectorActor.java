@@ -1,5 +1,7 @@
 package com.dw.dw.entity;
 
+import com.fasterxml.jackson.annotation.JsonRawValue;
+
 import javax.persistence.*;
 
 @Entity
@@ -18,6 +20,7 @@ public class DirectorActor {
 
     public Integer coTimes;
 
+    @JsonRawValue
     @Column(columnDefinition = "TEXT")
     public String productIds;
 }
