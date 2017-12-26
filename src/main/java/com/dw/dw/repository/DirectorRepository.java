@@ -7,4 +7,7 @@ import org.springframework.data.jpa.repository.*;
 public interface DirectorRepository extends JpaRepository<Director, Long> {
 
     Director findByDirector(String name);
+
+    @Override
+    long count();
 }

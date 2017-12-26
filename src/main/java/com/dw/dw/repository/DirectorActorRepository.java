@@ -13,4 +13,7 @@ public interface DirectorActorRepository extends JpaRepository<DirectorActor, Lo
     List<DirectorActor> findByActor(String name);
 
     List<DirectorActor> findByDirectorAndActor(String director, String actor);
+
+    @Override
+    long count();
 }

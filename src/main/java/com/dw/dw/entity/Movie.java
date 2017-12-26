@@ -25,6 +25,18 @@ public class Movie {
     public String authors;
 
     @Column(columnDefinition = "TEXT")
+    public String availability;
+
+    @Column(columnDefinition = "TEXT")
+    public String availability_max_hours;
+
+    @Column(columnDefinition = "TEXT")
+    public String availability_min_hours;
+
+    @Column(columnDefinition = "TEXT")
+    public String availability_type;
+
+    @Column(columnDefinition = "TEXT")
     public String binding;
 
     @Column(columnDefinition = "TEXT")

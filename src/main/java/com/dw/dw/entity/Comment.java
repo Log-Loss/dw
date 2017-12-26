@@ -16,15 +16,17 @@ public class Comment {
     @Column(columnDefinition = "TEXT")
     public String userId;
 
-    @Column(columnDefinition = "TEXT")
     public Integer helpfulCnt;
 
-    @Column(columnDefinition = "TEXT")
     public Integer rateCnt;
 
-    @Column(columnDefinition = "TEXT")
     public Integer score;
 
-    @Column(columnDefinition = "TEXT")
     public Integer time;
+
+    @Column(columnDefinition = "TEXT")
+    public String summary;
+
+    @Column(columnDefinition = "TEXT")
+    public String text;
 }

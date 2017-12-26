@@ -17,4 +17,7 @@ public interface TitleRepository extends JpaRepository<Title, Long> {
     List<Title> findByTitleContains(String title);
 
     List<Title> findByTitleStartingWith(String title);
+
+    @Override
+    long count();
 }
