@@ -16,6 +16,9 @@ public class Comment {
     @Column(columnDefinition = "TEXT")
     public String userId;
 
+    @Column(columnDefinition = "TEXT")
+    public String profileName;
+
     public Integer helpfulCnt;
 
     public Integer rateCnt;
