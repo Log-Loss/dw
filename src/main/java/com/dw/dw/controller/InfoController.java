@@ -61,4 +61,25 @@ public class InfoController {
         result.put("user", user);
         return new Response(200, "OK", result, false);
     }
+
+
+    @RequestMapping(value = "/info/year", method = RequestMethod.GET)
+    public Object getYearInfo() {
+        return movieRepository.getYearInfo();
+    }
+
+    @RequestMapping(value = "/info/month", method = RequestMethod.GET)
+    public Object getMonthInfo() {
+        return movieRepository.getMonthInfo();
+    }
+
+    @RequestMapping(value = "/info/week", method = RequestMethod.GET)
+    public Object getWeekInfo() {
+        return movieRepository.getWeekInfo();
+    }
+
+    @RequestMapping(value = "/info/weekday", method = RequestMethod.GET)
+    public Object getWeekdayInfo() {
+        return movieRepository.getWeekdayInfo();
+    }
 }
