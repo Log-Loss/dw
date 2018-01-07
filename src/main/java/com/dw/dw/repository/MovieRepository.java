@@ -27,18 +27,18 @@ public interface MovieRepository extends JpaRepository<Movie, Long> {
     @Query(value = "SELECT m FROM Movie m WHERE productId in (SELECT md.productId FROM MovieDirector md WHERE md.director=:director)")
     List<Movie> findByDirector(@Param("director") String director);
 
-    @Query(nativeQuery =true,value = "select * FROM month_info")
+    @Query(nativeQuery =true,value = "SELECT year(day),month(day),SUM(movieCnt),sum(commentCnt) FROM day_info GROUP BY  year(day),month(day)")
     List<Object> getMonthInfo();
 
-    @Query(nativeQuery =true,value = "select * FROM week_info")
+    @Query(nativeQuery =true,value = "SELECT week(day),weekday(day),SUM(movieCnt),sum(commentCnt) FROM day_info GROUP BY  week(day),weekday(day)")
     List<Object> getWeekInfo();
 
-    @Query(nativeQuery =true,value = "select * FROM weekday_info")
+    @Query(nativeQuery =true,value = "SELECT weekday(day),SUM(movieCnt),sum(commentCnt) FROM day_info GROUP BY weekday(day)")
     List<Object> getWeekdayInfo();
 
-    @Query(nativeQuery =true,value = "select * FROM year_info")
+    @Query(nativeQuery =true,value = "SELECT year(day),SUM(movieCnt),sum(commentCnt) FROM day_info GROUP BY  year(day)")
     List<Object> getYearInfo();
-
+    
     @Override
     long count();
 }
